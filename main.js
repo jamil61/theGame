@@ -9,7 +9,7 @@ function preload() {
 
 function setup() {
   createCanvas(960, 500);
-  sound = loadSound('audio/WildWest_a01.mp3', loaded)
+  sound = loadSound('audio/AudioCutter_WildWest_a01.mp3', loaded)
   // game.setup();
 }
 
@@ -26,5 +26,10 @@ function keyPressed() {
   if (keyCode === 32) {
     console.log('jumping');
     game.player.jump();
+  }
+  if(keyCode===13){
+    game.bullets.push(new Bullet())
+    game.player.shoot()
+    console.log('shooting')
   }
 }
