@@ -14,6 +14,6 @@ class Game {
   }
 
   setup() {
-
+    this.player.setup();
   }
 }
