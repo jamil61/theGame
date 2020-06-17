@@ -1,7 +1,7 @@
 let sound;
-const game = new Game;
-
-
+let numberOfShots=100;
+const game = new Game();
+let gameStart=false;
 function preload() {
   console.log("Preload");
   game.init();
@@ -15,11 +15,16 @@ function setup() {
 
 function loaded() {
   console.log('hello')
-  sound.play()
+  // sound.play()
 }
 
 function draw() {
-  game.draw();
+  if(gameStart){};
+   game.draw();
+   if(frameCount%80===0){
+    game.Tbullets.push(new TrumpBullet())
+    game.trump.shoot()
+  }
 }
 
 function keyPressed() {
@@ -27,9 +32,11 @@ function keyPressed() {
     console.log('jumping');
     game.player.jump();
   }
-  if(keyCode===13){
+  if(keyCode===13&&numberOfShots>0&&game.player.y==height-85){
     game.bullets.push(new Bullet())
     game.player.shoot()
-    console.log('shooting')
+    numberOfShots--;
+    console.log(numberOfShots)
   }
+  
 }

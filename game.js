@@ -5,6 +5,7 @@ class Game {
     this.player = new Player();
     this.trump = new Trump();
     this.bullets=[];
+    this.Tbullets=[];
     // this.sound = loadSound('./audio/WildWest_a01.mp3')
   }
 
@@ -13,6 +14,8 @@ class Game {
     this.player.draw();
     this.trump.draw();
     this.bullets.forEach(bullet=>bullet.draw())
+    this.Tbullets.forEach(bullet=>bullet.draw())
+    this.bullets.forEach(bullet=>bullet.checkCollision(this.trump))
   }
 
   setup() {

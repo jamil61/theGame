@@ -1,9 +1,9 @@
 class Player {
   constructor() {
-    this.img = loadImage('assets/8925.png')
+    this.img = loadImage('assets/player.png')
     this.x = width;
     this.y = height;
-    this.health = 30
+    this.health = 30;
     this.shotSound = loadSound('audio/Smith-&-Wesson-500-Magnum-Far-Single-Gunshot-C-www.fesliyanstudios.com.mp3')
     this.velocity = 15;
     this.gravity = 0.4;
@@ -29,7 +29,6 @@ class Player {
       this.jumps = 0;
     }
     image(this.img, this.x, this.y, 85, 85)
- 
     console.log('this is the y,', this.y, this.img.height)
   }
   // recieveDamage(damage) {
@@ -38,13 +37,15 @@ class Player {
 }
 class Trump {
   constructor() {
-    this.img = loadImage('assets/clipart1799679.png')
+    this.img = loadImage('assets/trump.png')
     this.x = 800;
     this.y = height + 400;
     this.health = 25
     this.gravity = 0.4;
     this.jumpCount = 0;
     this.velocity = 10;
+    this.shotSound = loadSound('audio/Smith-&-Wesson-500-Magnum-Far-Single-Gunshot-C-www.fesliyanstudios.com.mp3')
+
   }
   jump() {
     if (this.jumpCount < 2) {
@@ -53,6 +54,7 @@ class Trump {
     }
   }
   shoot() {
+      this.shotSound.play()
   }
   draw() {
     this.velocity += this.gravity;
@@ -61,7 +63,7 @@ class Trump {
       this.y = height - 85;
       this.jumpCount = 0;
     }
-    if (frameCount % 120 == 0) {
+    if (frameCount % 60 == 0) {
       this.jump()
     }
     image(this.img, this.x, this.y, 85, 85)
