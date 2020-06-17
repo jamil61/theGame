@@ -1,7 +1,9 @@
 let sound;
-let numberOfShots=100;
+let numberOfShots=6;
+let gameOver=0;
+let gameWin=0;
 const game = new Game();
-let gameStart=false;
+let gameStart=true;
 function preload() {
   console.log("Preload");
   game.init();
@@ -19,11 +21,20 @@ function loaded() {
 }
 
 function draw() {
-  if(gameStart){};
-   game.draw();
-   if(frameCount%80===0){
-    game.Tbullets.push(new TrumpBullet())
-    game.trump.shoot()
+  console.log(gameOver,gameWin)
+  if(gameStart&&gameWin===0&&gameOver===0){
+    game.draw();
+    if(frameCount%80===0){
+     game.Tbullets.push(new TrumpBullet())
+     game.trump.shoot()
+   }
+  }
+  
+  else if(gameStart&&gameWin>0){
+console.log('you win')
+
+  }else if(gameStart&&gameOver>0&&numberOfShots===0){
+    console.log('you lose')
   }
 }
 

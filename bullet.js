@@ -18,6 +18,7 @@ class Bullet {
     let d=dist(trump.x+85/2,trump.y+85/2,this.x+30/2,this.y+30/2)
     if(d<50){
         console.log("damn bruh you hit me")
+        gameWin++
     }
     }
 }
@@ -44,6 +45,7 @@ class TrumpBullet {
         let d=dist(player.x+85/2,player.y+85/2,this.x+30/2,this.y+30/2)
         if(d<50){
             console.log("damn bruh you hit me")
+            gameOver++
         }
         }
 }

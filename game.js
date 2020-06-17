@@ -16,6 +16,7 @@ class Game {
     this.bullets.forEach(bullet=>bullet.draw())
     this.Tbullets.forEach(bullet=>bullet.draw())
     this.bullets.forEach(bullet=>bullet.checkCollision(this.trump))
+    this.Tbullets.forEach(bullet=>bullet.checkCollision(this.player))
   }
 
   setup() {

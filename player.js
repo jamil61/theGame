@@ -29,7 +29,6 @@ class Player {
       this.jumps = 0;
     }
     image(this.img, this.x, this.y, 85, 85)
-    console.log('this is the y,', this.y, this.img.height)
   }
   // recieveDamage(damage) {
   //     this.health -= damage;
@@ -63,7 +62,7 @@ class Trump {
       this.y = height - 85;
       this.jumpCount = 0;
     }
-    if (frameCount % 60 == 0) {
+    if (frameCount % 120 == 0) {
       this.jump()
     }
     image(this.img, this.x, this.y, 85, 85)
