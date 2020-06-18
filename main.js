@@ -24,7 +24,8 @@ function setup() {
 
 function loaded() {
   console.log(gameOver)
-  // sound.play()
+  sound.setVolume(0.5)
+  sound.play()
 }
 
 function draw() {
