@@ -6,7 +6,6 @@ class Game {
     this.trump = new Trump();
     this.bullets=[];
     this.Tbullets=[];
-    // this.sound = loadSound('./audio/WildWest_a01.mp3')
     this.winImg=loadImage('assets/dcdipzl-83b3f153-e48b-45c3-ba71-5e608a9840e2.png')
   }
 

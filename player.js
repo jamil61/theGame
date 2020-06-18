@@ -3,7 +3,6 @@ class Player {
     this.img = loadImage('assets/player.png')
     this.x = width;
     this.y = height;
-    this.health = 30;
     this.shotSound = loadSound('audio/Smith-&-Wesson-500-Magnum-Far-Single-Gunshot-C-www.fesliyanstudios.com.mp3')
     this.velocity = 15;
     this.gravity = 0.4;
@@ -30,9 +29,6 @@ class Player {
     }
     image(this.img, this.x, this.y, 85, 85)
   }
-  // recieveDamage(damage) {
-  //     this.health -= damage;
-  // }
 }
 class Trump {
   constructor() {
@@ -44,7 +40,6 @@ class Trump {
     this.jumpCount = 0;
     this.velocity = 10;
     this.shotSound = loadSound('audio/Smith-&-Wesson-500-Magnum-Far-Single-Gunshot-C-www.fesliyanstudios.com.mp3')
-
   }
   jump() {
     if (this.jumpCount < 2) {
@@ -53,7 +48,7 @@ class Trump {
     }
   }
   shoot() {
-      this.shotSound.play()
+    this.shotSound.play()
   }
   draw() {
     this.velocity += this.gravity;
