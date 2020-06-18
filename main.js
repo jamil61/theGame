@@ -2,52 +2,84 @@ let sound;
 let numberOfShots=6;
 let gameOver=0;
 let gameWin=0;
+let winSound;
+let gameStart=false;
+function gameOverPlus(){
+  console.log('game over function')
+ setTimeout(()=>gameOver=1,3000)
+}
 const game = new Game();
-let gameStart=true;
+
 function preload() {
   console.log("Preload");
+   winSound=loadSound('audio/AudioCutter_mp3_20200618094438032_by_vidcompact.mp3');
+
   game.init();
 }
 
 function setup() {
   createCanvas(960, 500);
-  sound = loadSound('audio/AudioCutter_WildWest_a01.mp3', loaded)
+  sound = loadSound('audio/AudioCutter_AudioCutter_WildWest_a01.mp3', loaded)
   // game.setup();
 }
 
 function loaded() {
-  console.log('hello')
-  // sound.play()
+  console.log(gameOver)
+  sound.play()
 }
 
 function draw() {
-  console.log(gameOver,gameWin)
-  if(gameStart&&gameWin===0&&gameOver===0){
+ 
+ console.log(numberOfShots,gameOver)
+  if(gameStart===false){
+
+  }
+
+  else if(gameStart&&gameWin===0&&gameOver===0){
     game.draw();
-    if(frameCount%80===0){
+    
+    if(frameCount%50===0){
      game.Tbullets.push(new TrumpBullet())
      game.trump.shoot()
    }
   }
   
-  else if(gameStart&&gameWin>0){
-console.log('you win')
+  else if(gameWin>0){
 
-  }else if(gameStart&&gameOver>0&&numberOfShots===0){
-    console.log('you lose')
+image(game.winImg,0,0,width,height)
+
   }
+
+ if(numberOfShots===0){
+  console.log('out of shots')
+   
+      gameOverPlus()
+   
+  }
+   if(gameOver>0){
+        console.log('you lose')
+        image(game.winImg,0,0,width,height)
+  }
+  text('Bullts left'+' '+numberOfShots,10,20)
+  //else {
+  //   console.log('you lose')
+ 
+  //   noLoop()
+  // }
+ 
 }
 
 function keyPressed() {
   if (keyCode === 32) {
-    console.log('jumping');
+   
     game.player.jump();
   }
   if(keyCode===13&&numberOfShots>0&&game.player.y==height-85){
     game.bullets.push(new Bullet())
     game.player.shoot()
     numberOfShots--;
-    console.log(numberOfShots)
   }
-  
+  if(keyCode===65){
+    gameStart=true;
+  }
 }

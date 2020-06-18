@@ -2,19 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/arcadeclassic/ARCADECLASSIC.TTF">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
     <script defer src=https://cdn.JsDelivr.net/npm/p5/lib/addons/p5.sound.min.js></script>
     <script defer src=https://cdn.JsDelivr.net/npm/p5/lib/addons/p5.dom.min.js></script>
     <title>Document</title>
     <style>
-        body{       
+        body{  
+        font-family: ARCADECLASSIC;
+        padding-top: 5%;
         display: flex;
         justify-content:center;
-        align-items:center;}
+        align-items:center;
+        background: url('assets/dcdipzl-83b3f153-e48b-45c3-ba71-5e608a9840e2.png')no-repeat ;
+        background-size: 100% 115%;
+        }
+        h2{
+            position: fixed;
+            top: -60px;
+            left:530px;
+            font-size: 70px;
+            color: bisque;
+        }
+        h3{
+            position: fixed;
+            bottom: -10px;
+            left: 570px;
+            color: chartreuse;
+            font-size: 25px;
+        }
     </style>
 </head>
 <body>
+    <h2>A-job-for-a-cow-boy</h2>
+    <h3>jump:space-shoot:enter-start:left_ctrl</h3>
     <script src="background.js"></script>
     <script src="player.js"></script>
     <script src="game.js"></script>

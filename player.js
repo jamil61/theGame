@@ -62,7 +62,7 @@ class Trump {
       this.y = height - 85;
       this.jumpCount = 0;
     }
-    if (frameCount % 120 == 0) {
+    if (frameCount % 50 == 0) {
       this.jump()
     }
     image(this.img, this.x, this.y, 85, 85)
