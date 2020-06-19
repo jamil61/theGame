@@ -52,7 +52,7 @@ function draw() {
   }
   if (gameOver > 0) {
     console.log('you lose')
-    image(game.winImg, 0, 0, width, height)
+    image(game.loseImg, 0, 0, width, height)
   }
   text('Bullts left' + ' ' + numberOfShots, 10, 20)
 }

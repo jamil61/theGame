@@ -34,7 +34,6 @@ class TrumpBullet {
         this.x -= 20;
     }
     draw() {
-
         push()
         image(this.img, this.x, this.y, 30, 30)
         this.move();
@@ -44,7 +43,6 @@ class TrumpBullet {
         let d = dist(player.x + 85 / 2, player.y + 85 / 2, this.x + 30 / 2, this.y + 30 / 2)
         if (d < 20) {
             gameOver++
-
         }
     }
 }
