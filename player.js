@@ -1,6 +1,6 @@
 class Player {
   constructor() {
-    this.img = loadImage('assets/player.png')
+    this.img = loadImage('assets/alfonsogenius.png')
     this.x = width;
     this.y = height;
     this.shotSound = loadSound('audio/Smith-&-Wesson-500-Magnum-Far-Single-Gunshot-C-www.fesliyanstudios.com.mp3')
@@ -57,7 +57,7 @@ class Trump {
       this.y = height - 85;
       this.jumpCount = 0;
     }
-    if (frameCount % 90 == 0) {
+    if (frameCount % 70 == 0) {
       this.jump()
     }
     image(this.img, this.x, this.y, 85, 85)

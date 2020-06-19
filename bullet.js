@@ -1,6 +1,6 @@
 class Bullet {
     constructor() {
-        this.img = loadImage('assets/shootleft1.png');
+        this.img = loadImage('assets/script1.png');
         this.x = 0;
         this.player = new Player;
         this.y = this.player.y - 40;
