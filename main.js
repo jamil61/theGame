@@ -70,7 +70,7 @@ function keyPressed() {
   if (keyCode === 65) {
     gameStart = true;
   }
-  if (keyCode === 32 && gameOver > 0) {
+  if ((keyCode === 32 && gameOver > 0)||(keyCode===32&&gameWin>0)) {
     window.location.reload()
   }
 }
